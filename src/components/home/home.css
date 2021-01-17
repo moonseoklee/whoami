@@ -1,0 +1,30 @@
+@font-face {
+    font-family: 'IBMPlexSansKR-Regular';
+    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+.page{   
+    font-family: 'IBMPlexSansKR-Regular';
+    font-size: x-large;
+    height: 100vh;
+    text-align: center;
+    
+    display: flex;
+    -ms-flex-align: center;
+        align-items: center;
+    -ms-flex-pack: center;
+        justify-content: center;   
+    
+}
+
+.main-banner{
+    margin:10px;
+    margin-bottom: 30px;
+}
+
+.main-image{
+    margin:10px;
+    
+}
