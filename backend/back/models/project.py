@@ -5,6 +5,7 @@ from django.utils import timezone
 
 class Project(models.Model): 
     id = models.IntegerField(primary_key=True)
+    category = models.CharField(max_length=30)
     title = models.CharField(max_length=30)
     stack = models.CharField(max_length=200)
     markdown_content = models.TextField()
@@ -26,5 +27,5 @@ from rest_framework import serializers
 class ProjectSerializer(serializers.ModelSerializer): 
     class Meta:
          model = Project
-         fields = ('id','title','stack','markdown_content','created_date')
+         fields = ('id','category','title','stack','markdown_content','created_date')
 

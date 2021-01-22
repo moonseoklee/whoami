@@ -6,7 +6,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 import ProjectsModal from './modal';
 import Modal from 'react-modal';
-
+import getProjects from '../../../functions/api_refer'
 const customStyles = {
   content : {
     top                   : '50%',
@@ -19,9 +19,13 @@ const customStyles = {
 };
 
 const Projects = () => {
-  var subtitle;
+  
   const [modalIsOpen,setIsOpen] = useState(false);
   const [projectIdx,setProjectIdx] = useState(0);
+  const [category,setCategory] = useState(null);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
+
   function openModal(projectIdx) {
     setIsOpen(true);
     setProjectIdx(projectIdx);
@@ -35,6 +39,27 @@ const Projects = () => {
   function closeModal(){
     setIsOpen(false);
   }
+
+  useEffect(() => {
+    
+    const fetchProjects = async () =>{
+      try{
+        setError(null);
+        
+        setLoading(true);
+        const res = await getProjects();
+        console.log(res.data[0].id)
+        setCategory(res.data[0].category);
+      }catch(e){
+          console.log(e);
+      }
+      setLoading(false);
+    };
+    fetchProjects();
+  }, []);
+  if (loading) return <div>로딩중..</div>;
+  if (error) return <div>에러가 발생했습니다</div>;
+  if (!category) return null;
   return (
     <div className="">
       <header>
@@ -42,7 +67,7 @@ const Projects = () => {
           <div className="profile">
             
             <div className="profile-user-settings">
-              <h1 className="profile-user-name">projects</h1>
+              <h1 className="profile-user-name">{category}</h1>
               
               <button className="btn profile-settings-btn" aria-label="profile settings"><FontAwesomeIcon icon={faCog} /></button>
             </div>

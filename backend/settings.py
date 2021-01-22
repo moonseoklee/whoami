@@ -26,7 +26,14 @@ SECRET_KEY = '9h20c6z(v*z81zs&x#&44k$i$qm7(w7i!p%#5r^_5891g1(-27'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ["*"]
+CORS_ORIGIN_WHITELIST = [
+    "https://www.example.com",
+    "http://127.0.0.1:3000",
+    "http://localhost:3000"
+    
+]
+ALLOWED_HOSTS = ["http://127.0.0.1:3000","http://localhost:3000"]
+
 
 
 # Application definition
@@ -43,7 +50,8 @@ INSTALLED_APPS = [
     # 3rd party apps
     'rest_framework',
     # django app
-    'backend.back'
+    'backend.back',
+    'corsheaders'
 ]
 
 MIDDLEWARE = [
@@ -55,6 +63,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'corsheaders.middleware.CorsMiddleware',
+
 ]
 
 ROOT_URLCONF = 'backend.urls'
