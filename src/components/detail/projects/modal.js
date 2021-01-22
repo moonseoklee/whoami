@@ -8,9 +8,20 @@ const Main = styled.div`
     height:100%;
 `;
 
-const ProjectsModal = () => {
+const ProjectsModal = (props) => {
     return (
-        <Main>test</Main>
+        <>        
+         
+          <button onClick={props.closeModal}>close</button>
+          <div>Project {props.projectIdx}</div>
+          <form>
+            <input />
+            <button>tab navigation</button>
+            <button>stays</button>
+            <button>inside</button>
+            <button>the modal</button>
+          </form>
+        </>
     );
 };
 

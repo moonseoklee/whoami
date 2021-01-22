@@ -17,16 +17,19 @@ const customStyles = {
     transform             : 'translate(-50%, -50%)'
   }
 };
+
 const Projects = () => {
   var subtitle;
   const [modalIsOpen,setIsOpen] = useState(false);
-  function openModal() {
+  const [projectIdx,setProjectIdx] = useState(0);
+  function openModal(projectIdx) {
     setIsOpen(true);
+    setProjectIdx(projectIdx);
   }
 
   function afterOpenModal() {
     // references are now sync'd and can be accessed.
-    subtitle.style.color = '#f00';
+    //subtitle.style.color = '#f00';
   }
 
   function closeModal(){
@@ -59,7 +62,8 @@ const Projects = () => {
       <main>
         <div className="container">
           <div className="gallery">
-            <div className="gallery-item" tabIndex="0">
+            
+            <div className="gallery-item" tabIndex="0" onClick={openModal}>
               <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" className="gallery-image" alt="" />
               <div className="gallery-item-info">
                 <ul>
@@ -68,32 +72,8 @@ const Projects = () => {
                 </ul>
               </div>
             </div>
-            <div className="gallery-item" tabIndex="0">
-              <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" className="gallery-image" alt="" />
-              <div className="gallery-item-info">
-                <ul>
-                  <li className="gallery-item-likes"><span className="visually-hidden">Likes:</span><i className="fas fa-heart" aria-hidden="true"></i> 56</li>
-                  <li className="gallery-item-comments"><span className="visually-hidden">Comments:</span><i className="fas fa-comment" aria-hidden="true"></i> 2</li>
-                </ul>
-              </div>
-            </div><div className="gallery-item" tabIndex="0">
-              <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" className="gallery-image" alt="" />
-              <div className="gallery-item-info">
-                <ul>
-                  <li className="gallery-item-likes"><span className="visually-hidden">Likes:</span><i className="fas fa-heart" aria-hidden="true"></i> 56</li>
-                  <li className="gallery-item-comments"><span className="visually-hidden">Comments:</span><i className="fas fa-comment" aria-hidden="true"></i> 2</li>
-                </ul>
-              </div>
-            </div><div className="gallery-item" tabIndex="0">
-              <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" className="gallery-image" alt="" />
-              <div className="gallery-item-info">
-                <ul>
-                  <li className="gallery-item-likes"><span className="visually-hidden">Likes:</span><i className="fas fa-heart" aria-hidden="true"></i> 56</li>
-                  <li className="gallery-item-comments"><span className="visually-hidden">Comments:</span><i className="fas fa-comment" aria-hidden="true"></i> 2</li>
-                </ul>
-              </div>
-            </div><div className="gallery-item" tabIndex="0">
-            <button onClick={openModal}>Open Modal</button>
+            
+          
         <Modal
           isOpen={modalIsOpen}
           onAfterOpen={afterOpenModal}
@@ -101,19 +81,9 @@ const Projects = () => {
           style={customStyles}
           contentLabel="Example Modal"
         >
-
-          <h2 ref={_subtitle => (subtitle = _subtitle)}>Hello</h2>
-          <button onClick={closeModal}>close</button>
-          <div>I am a modal</div>
-          <form>
-            <input />
-            <button>tab navigation</button>
-            <button>stays</button>
-            <button>inside</button>
-            <button>the modal</button>
-          </form>
+          <ProjectsModal closeModal={closeModal} projectIdx={0}></ProjectsModal>
         </Modal>
-            </div>
+            
           </div>
           {/*<div className="loader"></div>*/}
         </div>

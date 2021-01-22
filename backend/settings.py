@@ -26,7 +26,7 @@ SECRET_KEY = '9h20c6z(v*z81zs&x#&44k$i$qm7(w7i!p%#5r^_5891g1(-27'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
 
 
 # Application definition
@@ -42,6 +42,8 @@ INSTALLED_APPS = [
 
     # 3rd party apps
     'rest_framework',
+    # django app
+    'backend.back'
 ]
 
 MIDDLEWARE = [
