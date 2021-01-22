@@ -23,6 +23,7 @@ router = DefaultRouter()
 router.register(r'project',ProjectViewSet)
 
 urlpatterns = [
-    
+    path('',include(router.urls)),
+
     path('admin/', admin.site.urls),
 ]
