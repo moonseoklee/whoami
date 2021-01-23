@@ -9,6 +9,8 @@ import Modal from 'react-modal';
 import getProjects from '../../../functions/api_refer'
 const customStyles = {
   content : {
+    width : '700px',
+    height : '900px',
     top                   : '50%',
     left                  : '50%',
     right                 : 'auto',

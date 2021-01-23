@@ -1,4 +1,4 @@
 from django.contrib import admin
-from .models import project
+from .models import item
 
-admin.site.register(project.Project) # 기본 ModelAdmin으로 등록
+admin.site.register(item.Item) # 기본 ModelAdmin으로 등록

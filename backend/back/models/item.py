@@ -3,7 +3,7 @@ from django.db import models
 from django.utils import timezone
 
 
-class Project(models.Model): 
+class Item(models.Model): 
     id = models.IntegerField(primary_key=True)
     category = models.CharField(max_length=30)
     title = models.CharField(max_length=30)
@@ -20,12 +20,14 @@ class Project(models.Model):
     def __str__(self):
         return self.title
 
+    class Meta:
+        db_table = "item"
 
 from rest_framework import serializers 
 
 
-class ProjectSerializer(serializers.ModelSerializer): 
+class ItemSerializer(serializers.ModelSerializer): 
     class Meta:
-         model = Project
+         model = Item
          fields = ('id','category','title','stack','markdown_content','created_date')
 

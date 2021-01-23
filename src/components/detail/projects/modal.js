@@ -1,6 +1,8 @@
 import React, { Component } from "react";
-
+import ReactMarkdown from 'react-markdown'
 import styled from 'styled-components'
+import { faTimes } from "@fortawesome/free-solid-svg-icons"
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 
 const Main = styled.div`   
    background:red;
@@ -8,19 +10,15 @@ const Main = styled.div`
     height:100%;
 `;
 
+const CloseButton = styled.div`
+  float:right;
+`;
 const ProjectsModal = (props) => {
     return (
         <>        
-         
-          <button onClick={props.closeModal}>close</button>
+          <CloseButton><FontAwesomeIcon icon={faTimes} onClick={props.closeModal} /></CloseButton>
           <div>Project {props.projectIdx}</div>
-          <form>
-            <input />
-            <button>tab navigation</button>
-            <button>stays</button>
-            <button>inside</button>
-            <button>the modal</button>
-          </form>
+          <ReactMarkdown># Hello, *world*!</ReactMarkdown>
         </>
     );
 };
