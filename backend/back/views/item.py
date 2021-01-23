@@ -16,5 +16,5 @@ class ItemViewSet(APIView):
         qs = qs.filter(category=category)
         sc = sc(qs,many=True)
         sc = (json.dumps(sc.data))
-        print(sc)
+        
         return HttpResponse(sc)

@@ -20,6 +20,7 @@ const customStyles = {
   }
 };
 
+
 const Projects = () => {
   
   const [modalIsOpen,setIsOpen] = useState(false);
@@ -27,6 +28,7 @@ const Projects = () => {
   const [category,setCategory] = useState(null);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [projects,setProjects] = useState([{}])
 
   function openModal(projectIdx) {
     setIsOpen(true);
@@ -42,6 +44,28 @@ const Projects = () => {
     setIsOpen(false);
   }
 
+  const Card = () =>{
+    return(
+      <div className="gallery-item" tabIndex="0" onClick={openModal}>
+                <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" className="gallery-image" alt="" />
+                <div className="gallery-item-info">
+                  <ul>
+                    <li className="gallery-item-likes"><span className="visually-hidden">Likes:</span><i className="fas fa-heart" aria-hidden="true"></i> 56</li>
+                    <li className="gallery-item-comments"><span className="visually-hidden">Comments:</span><i className="fas fa-comment" aria-hidden="true"></i> 2</li>
+                  </ul>
+                </div>
+              </div>
+    )
+  }
+  const CardList=projects.map(
+    (project,i)=>(
+      Card()
+    )
+  )
+    
+  
+
+
   useEffect(() => {
     
     const fetchProjects = async () =>{
@@ -49,8 +73,8 @@ const Projects = () => {
         setError(null);
         
         setLoading(true);
-        const res = await getProjects();
-        console.log(res.data[0].id)
+        const res = await getProjects("project/");
+        setProjects(res.data);
         setCategory(res.data[0].category);
       }catch(e){
           console.log(e);
@@ -88,6 +112,7 @@ const Projects = () => {
       </header>
       <main>
         <div className="container">
+          {CardList}
           <div className="gallery">
             
             <div className="gallery-item" tabIndex="0" onClick={openModal}>
@@ -107,6 +132,7 @@ const Projects = () => {
           onRequestClose={closeModal}
           style={customStyles}
           contentLabel="Example Modal"
+          ariaHideApp={false}
         >
           <ProjectsModal closeModal={closeModal} projectIdx={0}></ProjectsModal>
         </Modal>
