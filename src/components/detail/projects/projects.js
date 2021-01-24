@@ -9,14 +9,15 @@ import Modal from 'react-modal';
 import getProjects from '../../../functions/api_refer'
 const customStyles = {
   content : {
-    width : '700px',
+    width : '500px',
     height : '900px',
     top                   : '50%',
     left                  : '50%',
     right                 : 'auto',
     bottom                : 'auto',
     marginRight           : '-50%',
-    transform             : 'translate(-50%, -50%)'
+    transform             : 'translate(-50%, -50%)',
+    padding : 0
   }
 };
 
@@ -29,10 +30,11 @@ const Projects = () => {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
   const [projects,setProjects] = useState([{}])
+  const [project,setProject] = useState({})
 
-  function openModal(projectIdx) {
+  function openModal(projectIdx) {    
     setIsOpen(true);
-    setProjectIdx(projectIdx);
+    setProjectIdx(projectIdx);    
   }
 
   function afterOpenModal() {
@@ -44,10 +46,12 @@ const Projects = () => {
     setIsOpen(false);
   }
 
-  const Card = (project,i) =>{
+  const Card = (project,i) =>{    
+    
     return(
-      <div className="gallery-item" tabIndex="0" onClick={openModal}>
+      <div className="gallery-item" tabIndex="0" onClick={()=>{openModal(project.id)}}>
                 <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" className="gallery-image" alt="" />
+                
                 <div className="gallery-item-info">
                   <ul>
                     <li className="gallery-item-likes"><span className="visually-hidden">Likes:</span><i className="fas fa-heart" aria-hidden="true"></i> {project.id}</li>
@@ -57,6 +61,7 @@ const Projects = () => {
               </div>
     )
   }
+
   const CardList=projects.map(
     (project,i)=>(
       Card(project,i)
@@ -80,9 +85,11 @@ const Projects = () => {
     };
     fetchProjects();
   }, []);
+
   if (loading) return <div>로딩중..</div>;
-  if (error) return <div>에러가 발생했습니다</div>;
+  if (error) return <div>에러ㅠㅠ</div>;
   if (!category) return null;
+
   return (
     <div className="">
       <header>
@@ -122,7 +129,7 @@ const Projects = () => {
           contentLabel="Example Modal"
           ariaHideApp={false}
         >
-          <ProjectsModal closeModal={closeModal} projectIdx={0}></ProjectsModal>
+          <ProjectsModal closeModal={closeModal} project={projects[projectIdx]}></ProjectsModal>
         </Modal>
             
           </div>

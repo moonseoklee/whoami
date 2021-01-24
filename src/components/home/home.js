@@ -1,6 +1,6 @@
 import React, { useEffect } from "react";
 import './home.css';
-import enter_key from '../../images/enterkey.png'
+
 import styled, { keyframes } from 'styled-components'
 import { bounce, flash } from 'react-animations'
 import { Link,useHistory } from "react-router-dom";
@@ -48,7 +48,7 @@ function Home() {
             <div className="main-image">
                 <Flash>                    
                     <Link to="/Select">
-                        <Enter src={enter_key}></Enter>
+                        <Enter src={process.env.PUBLIC_URL+"/images/enterkey.png"}></Enter>
                     </Link>                    
                 </Flash>
             </div>

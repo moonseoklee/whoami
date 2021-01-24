@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import './select.css'
 import styled from 'styled-components'
-import doraemon from '../../images/doraemon.png'
+
 
 const SkillImage = styled.img`   
     width:80px;
@@ -12,7 +12,7 @@ const Experience = () => {
         <div className="page">
             
       <a href="#" className="card experience" id="experience">
-        <SkillImage src={doraemon}></SkillImage>
+        <SkillImage src={process.env.PUBLIC_URL+"/images/doraemon.png"}></SkillImage>
         <p>Experience</p>
       </a>
         </div>
