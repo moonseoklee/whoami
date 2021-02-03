@@ -29,10 +29,11 @@ DEBUG = True
 CORS_ORIGIN_WHITELIST = [
     "https://www.example.com",
     "http://127.0.0.1:3000",
-    "http://localhost:3000"
+    "http://localhost:3000",
+    "https://whoami-moonseok.herokuapp.com"
     
 ]
-ALLOWED_HOSTS = ["http://127.0.0.1:3000","http://localhost:3000"]
+ALLOWED_HOSTS = ["http://127.0.0.1:3000","http://localhost:3000","https://whoami-moonseok.herokuapp.com/"]
 
 
 
