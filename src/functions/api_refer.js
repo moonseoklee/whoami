@@ -4,7 +4,7 @@ export const GET_PROJECT = 'GET_PROJECT';
 export default async function getProjects(category) {
  
   return await axios
-    .get('http://127.0.0.1:8000/item/'+category);
+    .get('https://whoami-moonseok.herokuapp.com/item/'+category);
    
 }
 
