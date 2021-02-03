@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import './select.css'
 import styled from 'styled-components'
+import project from '../../images/project.png'
 
 
 const SkillImage = styled.img`   
@@ -12,7 +13,7 @@ const Projects = () => {
         <div className="page">
             
       <a href="/projects" className="card projects" id="projects">
-        <SkillImage src={process.env.PUBLIC_URL+"/images/project.png"}></SkillImage>
+        <SkillImage src={project}></SkillImage>
         
       </a>
         </div>

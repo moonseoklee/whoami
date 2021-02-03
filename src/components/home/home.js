@@ -4,7 +4,7 @@ import './home.css';
 import styled, { keyframes } from 'styled-components'
 import { bounce, flash } from 'react-animations'
 import { Link,useHistory } from "react-router-dom";
-
+import enterkey from '../../images/enterkey.png'
 const Bounce = styled.div`
     animation: 3s ${keyframes`${bounce}`} infinite;
 `;
@@ -48,7 +48,7 @@ function Home() {
             <div className="main-image">
                 <Flash>                    
                     <Link to="/Select">
-                        <Enter src={process.env.PUBLIC_URL+"/images/enterkey.png"}></Enter>
+                        <Enter src={enterkey}></Enter>
                     </Link>                    
                 </Flash>
             </div>

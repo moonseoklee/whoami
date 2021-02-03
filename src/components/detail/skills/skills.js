@@ -3,6 +3,20 @@ import React, { Component } from "react";
 import styled,{keyframes} from 'styled-components'
 import { pulse } from 'react-animations'
 import './line.css'
+import mongodb from '../../../images/mongodb.png'
+import python from '../../../images/python.png'
+import java from '../../../images/java.png'
+import javascript from '../../../images/javascript.png'
+import react from '../../../images/react.png'
+import springboot from '../../../images/springboot.png'
+import django from '../../../images/django.png'
+import nodejs from '../../../images/nodejs.png'
+import mysql from '../../../images/mysql.png'
+import postgre from '../../../images/postgre.png'
+
+
+
+
 const SkillBucket = styled.div`
 width:90%;
 height:90%;
@@ -33,20 +47,21 @@ const Skills = () => {
         <div className="page">
            <SkillBucket>
                   <LineDiv>
-                 <Image src={process.env.PUBLIC_URL+"images/python.png"}></Image>
-                 <Image src={process.env.PUBLIC_URL+"images/java.png"}></Image>
-                 <Image src={process.env.PUBLIC_URL+"images/javascript.png"}></Image>                              
+                 <Image src={python}></Image>
+                 <Image src={java}></Image>
+                 <Image src={javascript}></Image>
                  </LineDiv>
                  <LineDiv>                 
-                 <Image src={process.env.PUBLIC_URL+"images/react.png"}></Image>
-                 <Image src={process.env.PUBLIC_URL+"images/springboot.png"}></Image>
-                 <Image src={process.env.PUBLIC_URL+"images/django.png"}></Image>
-                 <Image src={process.env.PUBLIC_URL+"images/nodejs.png"}></Image>
+                 <Image src={react}></Image>
+                 <Image src={springboot}></Image>
+                 <Image src={django}></Image>
+                 <Image src={nodejs}></Image>
                  </LineDiv>
                  <LineDiv>                 
-                 <Image src={process.env.PUBLIC_URL+"images/mysql.png"}></Image>
-                 <Image src={process.env.PUBLIC_URL+"images/mongodb.png"}></Image>
-                 <Image src={process.env.PUBLIC_URL+"images/postgre.png"}></Image>
+                 <Image src={mysql}></Image>
+                 <Image src={mongodb}></Image>
+                 <Image src={postgre}></Image>
+
                 
                  </LineDiv>
           </SkillBucket>       
