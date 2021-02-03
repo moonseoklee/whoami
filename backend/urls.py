@@ -3,6 +3,7 @@ from django.urls import path,include
 from rest_framework.routers import DefaultRouter
 from .back.views.item import ItemViewSet
 
+from .views import index
 
 #router = DefaultRouter()
 #router.register(r'item',ItemViewSet)
@@ -12,5 +13,6 @@ urlpatterns = [
     #path('item/',ItemViewSet)
     path('item/<str:category>/',ItemViewSet.get),
     path('admin/', admin.site.urls),
+    path('',index,name='index')
     
 ]
