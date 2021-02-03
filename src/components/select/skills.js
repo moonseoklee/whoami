@@ -13,11 +13,11 @@ const Skills = () => {
 
     return (
         <div className="page">
-            <a href="#" className="card skills" id="skills">       
+            <a href="/skills" className="card skills" id="skills">       
                 
-                    <SkillImage src={process.env.PUBLIC_URL+"/images/doraemon.png"}></SkillImage>
+                    <SkillImage src={process.env.PUBLIC_URL+"/images/skills.png"}></SkillImage>
                 
-                <p>Skills</p>
+                
             </a>
            
         </div>

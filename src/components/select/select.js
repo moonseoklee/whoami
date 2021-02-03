@@ -7,14 +7,25 @@ import Projects from './projects'
 import { Link, useHistory } from "react-router-dom";
 import Experience from "./experience";
 
+import { ToastContainer, toast } from 'react-toastify';
 
 
-
+const adminButton = () => toast.dark('방향키와 엔터키를 사용해보세요 ⌨️', {
+    position: "top-center",
+    autoClose: 3000,
+    hideProgressBar: false,
+    closeOnClick: true,
+    pauseOnHover: true,
+    draggable: true,
+    progress: undefined,
+    
+  });;
 function OnKeyPress(idx, history) {
     let dict = { 0: ['skills', 'card-hover skills', 'card skills','Skills'], 1: ['projects', 'card-hover projects', 'card projects','Projects'],
                 2: ['experience', 'card-hover experience', 'card experience','Experience'] };
 
     useEffect(() => {
+        adminButton();
         function onKeyup(e) {
             let to_find = null;
             if (e.key==='Enter'){
@@ -66,6 +77,18 @@ const Select = () => {
             <Skills></Skills>
             <Projects></Projects>
             <Experience></Experience>
+            <ToastContainer
+                position="top-center"
+                autoClose={1500}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                style={{width:"500px",fontSize:"20px"}}
+              />
         </div>
     );
 };

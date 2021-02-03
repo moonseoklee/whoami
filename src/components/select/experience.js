@@ -11,9 +11,9 @@ const Experience = () => {
     return (
         <div className="page">
             
-      <a href="#" className="card experience" id="experience">
-        <SkillImage src={process.env.PUBLIC_URL+"/images/doraemon.png"}></SkillImage>
-        <p>Experience</p>
+      <a href="experience" className="card experience" id="experience">
+        <SkillImage src={process.env.PUBLIC_URL+"/images/experience.png"}></SkillImage>
+        
       </a>
         </div>
     );

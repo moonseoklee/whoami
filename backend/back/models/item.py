@@ -10,7 +10,7 @@ class Item(models.Model):
     stack = models.CharField(max_length=200)
     markdown_content = models.TextField()
     created_date = models.DateTimeField(default=timezone.now)
-    
+    completed = models.BooleanField(default=False)
     def set_stack(self, x):
         self.stack = json.dumps(x)
 

@@ -28,7 +28,7 @@ body {
   .experience {
     --bg-color: #CEB2FC;
     --bg-color-light: #F0E7FF;
-    --text-color-hover: #fff;
+    --text-color-hover: #4C5656;;
     --box-shadow-color: rgba(206, 178, 252, 0.48);
   }
   
@@ -41,16 +41,19 @@ body {
   
   .card, .card-hover {
     width: 220px;
-    height: 321px;
+    height: 251px;
     background: #fff;
-    border-top-right-radius: 10px;
+    border-top-right-radius: 500px;
+    border-top-left-radius: 500px;
+    border-bottom-left-radius: 500px;
+    border-bottom-right-radius: 500px;
     overflow: hidden;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     position: relative;
-    box-shadow: 0 14px 26px rgba(0,0,0,0.04);
+    box-shadow: 0 14px 26px rgba(0,0,0,0.30);
     transition: all 0.3s ease-out;
     text-decoration: none;
   }

@@ -4,6 +4,7 @@ import styled from 'styled-components'
 
 const StackDiv = styled.div`  
   display:flex;
+  margin-bottom:50px;
 `;
 
 const Stack = styled.img`  
@@ -18,6 +19,10 @@ const Contents = styled.div`
 const Thumbnail = styled.img`
   width:100%;
   src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg"
+`;
+
+const Title = styled.h1`
+  font-size:40px;
 `;
 
 
@@ -40,12 +45,13 @@ const ProjectsModal = (props) => {
   
   return (
     <>
-      <Thumbnail src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg"></Thumbnail>
+      {/*<Thumbnail src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/169963/photo-1429043794791-eb8f26f44081.jpeg"></Thumbnail>*/}
       <Contents>
+      <Title>{props.project.title}</Title>
         <StackDiv>
         <StackList></StackList>
         </StackDiv>
-        <div>Project {props.project.id}</div>
+        
         <ReactMarkdown># Hello, *world*!</ReactMarkdown>
       </Contents>
     </>

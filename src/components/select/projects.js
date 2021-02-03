@@ -11,9 +11,9 @@ const Projects = () => {
     return (
         <div className="page">
             
-      <a href="#" className="card projects" id="projects">
-        <SkillImage src={process.env.PUBLIC_URL+"/images/doraemon.png"}></SkillImage>
-        <p>Projects</p>
+      <a href="/projects" className="card projects" id="projects">
+        <SkillImage src={process.env.PUBLIC_URL+"/images/project.png"}></SkillImage>
+        
       </a>
         </div>
     );
