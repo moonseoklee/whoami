@@ -8,11 +8,23 @@ from .views import index
 #router = DefaultRouter()
 #router.register(r'item',ItemViewSet)
 #router.register(r'item/(?P<library_id>[0-9]+)', BookViewSet, base_name='books')
+react_views_regex = r'\/|\b'.join([
+
+    # List all your react routes here
+    'Select',
+    'skills',
+    'projects',
+    'experience'
+
+]) + r'\/
+
 urlpatterns = [
     #path('',include(router.urls)),
     #path('item/',ItemViewSet)
     path('item/<str:category>/',ItemViewSet.get),
     path('admin/', admin.site.urls),
     re_path('',index,name='index')
+    
+    re_path(react_views_regex,index,name='index'),
     
 ]
