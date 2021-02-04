@@ -16,7 +16,7 @@ react_views_regex = r'\/|\b'.join([
     'projects',
     'experience'
 
-]) + r'\/
+]) + r'\/'
 
 urlpatterns = [
     #path('',include(router.urls)),
