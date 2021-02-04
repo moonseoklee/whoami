@@ -9,21 +9,25 @@ import 'react-toastify/dist/ReactToastify.css';
 import ProjectsModal from './modal';
 import Modal from 'react-modal';
 import getProjects from '../../../functions/api_refer'
+import { faBlackberry } from '@fortawesome/free-brands-svg-icons';
 
 
 
 
 const customStyles = {
   content: {
-    width: '500px',
+    width: '600px',
     height: '900px',
+    overflow:'auto',
+    borderradius:'100px',
     top: '50%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    padding: 0
+    padding: 0,
+    fontSize:'14px'
   }
 };
 
@@ -102,7 +106,11 @@ const Projects = () => {
     };  
     fetchProjects();
   }, []);
-
+  
+  
+ const selectModal = () => {
+   setIsOpen(!modalIsOpen) // true/false toggle
+ }
   if (loading) return <div>로딩중..</div>;
   if (error) return <div>에러ㅠㅠ</div>;
   if (!category) return null;
@@ -147,21 +155,14 @@ const Projects = () => {
       </header>
       <main>
         <div className="container">
-
           <div className="gallery">
             {CardList}
-
-
-            <Modal
-              isOpen={modalIsOpen}
-              onAfterOpen={afterOpenModal}
-              onRequestClose={closeModal}
-              style={customStyles}
-              contentLabel="Example Modal"
-              ariaHideApp={false}
-            >
-              <ProjectsModal closeModal={closeModal} project={projects[projectIdx]}></ProjectsModal>
-            </Modal>
+            <p onClick={ selectModal }
+             >Open Modal</p>      
+             <ProjectsModal 
+                 displayModal={modalIsOpen}
+                 closeModal={selectModal}
+                 project={projects[projectIdx]}></ProjectsModal>           
 
           </div>
           {/*<div className="loader"></div>*/}
