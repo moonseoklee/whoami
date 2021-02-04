@@ -1,5 +1,5 @@
 from django.contrib import admin
-from django.urls import path,include
+from django.urls import path,include,re_path
 from rest_framework.routers import DefaultRouter
 from .back.views.item import ItemViewSet
 
@@ -13,6 +13,6 @@ urlpatterns = [
     #path('item/',ItemViewSet)
     path('item/<str:category>/',ItemViewSet.get),
     path('admin/', admin.site.urls),
-    path('',index,name='index')
+    re_path('',index,name='index')
     
 ]
