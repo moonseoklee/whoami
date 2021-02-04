@@ -23,8 +23,7 @@ urlpatterns = [
     #path('item/',ItemViewSet)
     path('item/<str:category>/',ItemViewSet.get),
     path('admin/', admin.site.urls),
-    re_path('',index,name='index')
-    
+    re_path('',index,name='index'),    
     re_path(react_views_regex,index,name='index'),
     
 ]
