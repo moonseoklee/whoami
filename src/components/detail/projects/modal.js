@@ -13,7 +13,7 @@ import django from '../../../images/django.png'
 import nodejs from '../../../images/nodejs.png'
 import mysql from '../../../images/mysql.png'
 import postgre from '../../../images/postgre.png'
-
+import github from '../../../images/github.png'
 const dict = {"mongodb":mongodb,"python":python,"java":java,"java":java,"javascript":javascript,"react":react,"springboot":springboot,
 "django":django,"nodejs":nodejs,"mysql":mysql,"postgre":postgre}
 const StackDiv = styled.div`  
@@ -37,11 +37,22 @@ const Thumbnail = styled.img`
 
 const Title = styled.h1`
   font-size:40px;
+  display:flex;
 `;
 
 
+
+
 const ProjectsModal = (props) => {
-  
+  const GitLink = () => {
+    console.log(props.project)
+    if (props.project.git) {
+      return  <a href="https://github.com/Joeyryanbridges" target="_blank">
+      <Stack src={github} style={{marginTop:"10px",cursor:"pointer"}} onClick=""></Stack>
+      </a>;
+    }
+    return <></>;
+  }
   
   const StackList = () => {
     const stacks = []
@@ -78,7 +89,10 @@ function closeModal(e) {
                  onClick={ closeModal }>&times;
              </span>
              <Contents>
-      <Title>{props.project.title}</Title>
+      <Title>{props.project.title}
+        <GitLink></GitLink>
+        </Title>
+      
         <StackDiv>
         <StackList></StackList>
         </StackDiv>

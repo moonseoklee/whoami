@@ -10,7 +10,7 @@ import ProjectsModal from './modal';
 import Modal from 'react-modal';
 import getProjects from '../../../functions/api_refer'
 import { faBlackberry } from '@fortawesome/free-brands-svg-icons';
-
+import tree from  '../../../images/tree.jpg'
 
 
 
@@ -60,7 +60,7 @@ const Projects = () => {
 
     return (
       <div className="gallery-item" tabIndex="0" onClick={() => { openModal(project.id) }}>
-        <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" className="gallery-image" alt="" style={{borderRadius:"10px"}} />
+        <img src={tree} className="gallery-image" alt="" style={{borderRadius:"10px"}} />
 
         <div className="gallery-item-info">
           <ul>
