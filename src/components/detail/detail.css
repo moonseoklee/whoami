@@ -317,9 +317,9 @@ Remove or comment-out the code block below to see how the browser will fall-back
 
 */
 
-@supports (display: grid) {
+@supports (display: block) {
     .profile {
-        display: grid;
+        display: table;
         grid-template-columns: 1fr 2fr;
         grid-template-rows: repeat(3, auto);
         grid-column-gap: 3rem;
@@ -344,6 +344,10 @@ Remove or comment-out the code block below to see how the browser will fall-back
     .gallery {
         width: auto;
         margin: 0;
+    }
+
+    .profile-user-settings{
+        display:contents
     }
 
     @media (max-width: 40rem) {

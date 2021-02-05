@@ -60,7 +60,7 @@ const Projects = () => {
 
     return (
       <div className="gallery-item" tabIndex="0" onClick={() => { openModal(project.id) }}>
-        <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" className="gallery-image" alt="" />
+        <img src="https://images.unsplash.com/photo-1511765224389-37f0e77cf0eb?w=500&h=500&fit=crop" className="gallery-image" alt="" style={{borderRadius:"10px"}} />
 
         <div className="gallery-item-info">
           <ul>
@@ -117,6 +117,7 @@ const Projects = () => {
 
   return (
     <div className="">
+      <button className="btn profile-settings-btn" aria-label="profile settings" onClick={adminButton} style={{float:"right"}}><FontAwesomeIcon icon={faCog} /></button>
       <header>
         <div className="container">
           <div className="profile">
@@ -125,7 +126,7 @@ const Projects = () => {
               <h1 className="profile-user-name">{category}</h1>
 
 
-              <button className="btn profile-settings-btn" aria-label="profile settings" onClick={adminButton}><FontAwesomeIcon icon={faCog} /></button>
+              
               <ToastContainer
                 position="top-center"
                 autoClose={1500}
@@ -140,13 +141,7 @@ const Projects = () => {
               />
 
             </div>
-            <div className="profile-stats">
-              <ul>
-                <li><span className="profile-stat-count">{projects.length}</span> Total</li>
-                <li><span className="profile-stat-count"></span> completed</li>
-                <li><span className="profile-stat-count"></span> ing</li>
-              </ul>
-            </div>
+            
             <div className="profile-bio">
               <p><span className="profile-real-name">그동안 . </span> 해왔던 것들이에요🚣</p>
             </div>
@@ -157,8 +152,7 @@ const Projects = () => {
         <div className="container">
           <div className="gallery">
             {CardList}
-            <p onClick={ selectModal }
-             >Open Modal</p>      
+            
              <ProjectsModal 
                  displayModal={modalIsOpen}
                  closeModal={selectModal}
