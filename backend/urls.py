@@ -22,8 +22,8 @@ urlpatterns = [
     #path('',include(router.urls)),
     #path('item/',ItemViewSet)
     path('item/<str:category>/',ItemViewSet.get),
-    path('admin/', admin.site.urls),
-    re_path('/',index),    
+    re_path('admin/', admin.site.urls),
+    re_path('',index),    
     re_path(react_views_regex,index),
     
 ]
