@@ -17,7 +17,7 @@ react_views_regex = r'\/|\b'.join([
     'skills',
     'projects',
     'experience'
-    '/'
+
 ]) + r'\/'
 
 urlpatterns = [
