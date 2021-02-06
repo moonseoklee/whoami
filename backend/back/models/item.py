@@ -12,7 +12,7 @@ class Item(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     completed = models.BooleanField(default=False)
     git = models.CharField(max_length=200,default=None,null=True,blank=True)
-    image =models.ImageField(default=None,upload_to="",blank=True)
+    image =models.ImageField(default=None,upload_to="",blank=True,null=True)
     
     def set_stack(self, x):
         self.stack = json.dumps(x)
