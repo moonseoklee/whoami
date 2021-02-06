@@ -23,9 +23,9 @@ const Projects = () => {
   const [projects, setProjects] = useState([{}])
   const [project, setProject] = useState({})
 
-  function openModal(projectIdx) {
+  function openModal(idx) {
     setIsOpen(true);
-    setProjectIdx(projectIdx);
+    setProjectIdx(idx);
   }
 
 
@@ -40,7 +40,7 @@ const Projects = () => {
         <div className="gallery-item-info">
           <ul>
             <li className="gallery-item-likes"><span className="visually-hidden">Likes:</span><i className="fas fa-heart" aria-hidden="true"></i> {project.id}</li>
-            <li className="gallery-item-comments"><span className="visually-hidden">Comments:</span><i className="fas fa-comment" aria-hidden="true"></i> 2</li>
+            <li className="gallery-item-comments"><span className="visually-hidden">Comments:</span><i className="fas fa-comment" aria-hidden="true"></i></li>
           </ul>
         </div>
       </div>
@@ -70,13 +70,16 @@ const Projects = () => {
 
         setLoading(true);
         const res = await getProjects("프로젝트/");
-        
+        for(let i=0;i<res.data.length;i++){
+          res.data[i].id = i;
+        }
         setProjects(res.data);
-        
+        console.log(res.data);
         setCategory(res.data[0].category);
       } catch (e) {
         console.log(e);
       }
+
       setLoading(false);
     };  
     fetchProjects();

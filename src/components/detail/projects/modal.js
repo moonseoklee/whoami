@@ -44,8 +44,9 @@ const Title = styled.h1`
 
 
 const ProjectsModal = (props) => {
+  console.log(props.project)
   const GitLink = () => {
-    console.log(props.project)
+    
     if (props.project.git) {
       return  <a href="https://github.com/Joeyryanbridges" target="_blank">
       <Stack src={github} style={{marginTop:"10px",cursor:"pointer"}} onClick=""></Stack>
