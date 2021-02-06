@@ -2,6 +2,8 @@ from django.contrib import admin
 from django.urls import path,include,re_path
 from rest_framework.routers import DefaultRouter
 from .back.views.item import ItemViewSet
+from django.conf.urls.static import static
+from django.conf import settings
 
 from .views import index
 
@@ -23,7 +25,7 @@ urlpatterns = [
     #path('item/',ItemViewSet)
     path('item/<str:category>/',ItemViewSet.get),
     re_path('admin/', admin.site.urls),
-    re_path('',index),    
+    re_path('/',index),    
     re_path(react_views_regex,index),
     
-]
+] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)

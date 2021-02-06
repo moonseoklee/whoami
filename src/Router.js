@@ -4,6 +4,7 @@ import Home from "./components/home/home";
 import Select from "./components/select/select";
 import Skills from "./components/detail/skills/skills";
 import Projects from "./components/detail/projects/projects";
+import Experience from "./components/detail/experience/experience";
 
 
 function Router(){
@@ -15,6 +16,7 @@ function Router(){
                     <Route path="/Select" component={Select} />                    
                     <Route path="/Skills" component={Skills} />
                     <Route path="/Projects" component={Projects} />
+                    <Route path="/Experience" component={Experience} />
                 </Switch>
                 </BrowserRouter>
                 </>

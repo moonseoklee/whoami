@@ -12,6 +12,8 @@ class Item(models.Model):
     created_date = models.DateTimeField(default=timezone.now)
     completed = models.BooleanField(default=False)
     git = models.CharField(max_length=200,default=None,null=True,blank=True)
+    image =models.ImageField(default=None,upload_to="",null=True)
+    
     def set_stack(self, x):
         self.stack = json.dumps(x)
 
@@ -30,5 +32,5 @@ from rest_framework import serializers
 class ItemSerializer(serializers.ModelSerializer): 
     class Meta:
          model = Item
-         fields = ('id','category','title','stack','markdown_content','created_date','git')
+         fields = ('id','category','title','stack','markdown_content','created_date','git','image')
 

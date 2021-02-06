@@ -13,7 +13,10 @@ import { faBlackberry } from '@fortawesome/free-brands-svg-icons';
 import tree from  '../../../images/tree.jpg'
 
 
-const Projects = () => {
+
+
+
+const Experience = () => {
 
   const [modalIsOpen, setIsOpen] = useState(false);
   const [projectIdx, setProjectIdx] = useState(0);
@@ -23,10 +26,6 @@ const Projects = () => {
   const [projects, setProjects] = useState([{}])
   const [project, setProject] = useState({})
 
-  function openModal(projectIdx) {
-    setIsOpen(true);
-    setProjectIdx(projectIdx);
-  }
 
 
 
@@ -34,13 +33,13 @@ const Projects = () => {
   const Card = (project, i) => {
 
     return (
-      <div className="gallery-item" tabIndex="0" onClick={() => { openModal(project.id) }}>
-        <img src={tree} className="gallery-image" alt="" style={{borderRadius:"10px"}} />
+      <div className="gallery-item" tabIndex="0" onClick={() => { }}>
+        <img src={project.image} className="gallery-image" alt="" style={{borderRadius:"10px"}} />
 
         <div className="gallery-item-info">
           <ul>
-            <li className="gallery-item-likes"><span className="visually-hidden">Likes:</span><i className="fas fa-heart" aria-hidden="true"></i> {project.id}</li>
-            <li className="gallery-item-comments"><span className="visually-hidden">Comments:</span><i className="fas fa-comment" aria-hidden="true"></i> 2</li>
+            <li className="gallery-item-likes"><span className="visually-hidden">Likes:</span><i className="fas fa-heart" aria-hidden="true"></i>{project.title}</li>
+            <li className="gallery-item-comments"><span className="visually-hidden">Comments:</span><i className="fas fa-comment" aria-hidden="true"></i></li>
           </ul>
         </div>
       </div>
@@ -69,7 +68,7 @@ const Projects = () => {
         setError(null);
 
         setLoading(true);
-        const res = await getProjects("프로젝트/");
+        const res = await getProjects("경험/");
         
         setProjects(res.data);
         
@@ -141,4 +140,4 @@ const Projects = () => {
   );
 };
 
-export default Projects;
+export default Experience;

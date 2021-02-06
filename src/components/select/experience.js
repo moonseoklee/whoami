@@ -12,7 +12,7 @@ const Experience = () => {
     return (
         <div className="page">
             
-      <a href="experience" className="card experience" id="experience">
+      <a href="/experience" className="card experience" id="experience">
         <SkillImage src={experience}></SkillImage>
         
       </a>
