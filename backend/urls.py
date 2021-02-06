@@ -17,7 +17,7 @@ react_views_regex = r'\/|\b'.join([
     'skills',
     'projects',
     'experience'
-
+    '/'
 ]) + r'\/'
 
 urlpatterns = [
@@ -25,7 +25,7 @@ urlpatterns = [
     #path('item/',ItemViewSet)
     path('item/<str:category>/',ItemViewSet.get),
     re_path('admin/', admin.site.urls),
-    re_path('/',index),    
+    
     re_path(react_views_regex,index),
     
 ] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
