@@ -4,6 +4,7 @@ from rest_framework.routers import DefaultRouter
 from .back.views.item import ItemViewSet
 from django.conf.urls.static import static
 from django.conf import settings
+ from django.views.static import serve
 
 from .views import index
 
@@ -27,5 +28,9 @@ urlpatterns = [
     re_path('admin/', admin.site.urls),
     re_path('', index),    
     re_path(react_views_regex,index),
-    
+    re_path(r'^static/(?P<path>.*)$', serve,
+        {'document_root': settings.STATIC_ROOT}),
+re_path(r'^media/(?P<path>.*)$', serve, {
+    "document_root": settings.MEDIA_ROOT
+})
 ] +static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
