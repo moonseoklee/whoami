@@ -41,6 +41,7 @@ const Thumbnail = styled.img`
 const Title = styled.h1`
   font-size:40px;
   display:flex;
+  float:right;
 `;
 
 
