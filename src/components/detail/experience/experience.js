@@ -12,6 +12,7 @@ import getProjects from '../../../functions/api_refer'
 import { faBlackberry } from '@fortawesome/free-brands-svg-icons';
 import tree from  '../../../images/tree.jpg'
 
+import ReactMarkdown from 'react-markdown'
 
 
 
@@ -36,10 +37,11 @@ const Experience = () => {
       <div className="gallery-item" tabIndex="0" onClick={() => { }}>
         <img src={project.image} className="gallery-image" alt="" style={{borderRadius:"10px"}} />
 
-        <div className="gallery-item-info">
+        <div className="gallery-item-info2">
           <ul>
-            <li className="gallery-item-likes"><span className="visually-hidden">Likes:</span><i className="fas fa-heart" aria-hidden="true"></i>{project.title}</li>
-            <li className="gallery-item-comments"><span className="visually-hidden">Comments:</span><i className="fas fa-comment" aria-hidden="true"></i></li>
+            
+            <ReactMarkdown>{project.markdown_content}</ReactMarkdown>
+            
           </ul>
         </div>
       </div>

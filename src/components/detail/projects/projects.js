@@ -35,11 +35,11 @@ const Projects = () => {
 
     return (
       <div className="gallery-item" tabIndex="0" onClick={() => { openModal(project.id) }}>
-        <img src={tree} className="gallery-image" alt="" style={{borderRadius:"10px"}} />
+        <img src={project.image} className="gallery-image" alt="" style={{borderRadius:"10px"}} />
 
         <div className="gallery-item-info">
           <ul>
-            <li className="gallery-item-likes"><span className="visually-hidden">Likes:</span><i className="fas fa-heart" aria-hidden="true"></i> {project.id}</li>
+            <li className="gallery-item-likes"><span className="visually-hidden">Likes:</span><i className="fas fa-heart" aria-hidden="true"></i> {project.title}</li>
             <li className="gallery-item-comments"><span className="visually-hidden">Comments:</span><i className="fas fa-comment" aria-hidden="true"></i></li>
           </ul>
         </div>

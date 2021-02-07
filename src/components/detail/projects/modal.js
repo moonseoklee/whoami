@@ -14,8 +14,11 @@ import nodejs from '../../../images/nodejs.png'
 import mysql from '../../../images/mysql.png'
 import postgre from '../../../images/postgre.png'
 import github from '../../../images/github.png'
+import spring from '../../../images/spring.png'
+
+
 const dict = {"mongodb":mongodb,"python":python,"java":java,"java":java,"javascript":javascript,"react":react,"springboot":springboot,
-"django":django,"nodejs":nodejs,"mysql":mysql,"postgre":postgre}
+"django":django,"nodejs":nodejs,"mysql":mysql,"postgre":postgre,"spring":spring}
 const StackDiv = styled.div`  
   display:flex;
   margin-bottom:50px;
@@ -48,7 +51,7 @@ const ProjectsModal = (props) => {
   const GitLink = () => {
     
     if (props.project.git) {
-      return  <a href="https://github.com/Joeyryanbridges" target="_blank">
+      return  <a href={props.project.git} target="_blank">
       <Stack src={github} style={{marginTop:"10px",cursor:"pointer"}} onClick=""></Stack>
       </a>;
     }
@@ -90,7 +93,7 @@ function closeModal(e) {
                  onClick={ closeModal }>&times;
              </span>
              <Contents>
-      <Title>{props.project.title}
+      <Title>
         <GitLink></GitLink>
         </Title>
       
