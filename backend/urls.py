@@ -4,7 +4,7 @@ from rest_framework.routers import DefaultRouter
 from .back.views.item import ItemViewSet
 from django.conf.urls.static import static
 from django.conf import settings
- from django.views.static import serve
+from django.views.static import serve
 
 from .views import index
 
