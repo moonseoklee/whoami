@@ -26,10 +26,11 @@ urlpatterns = [
     #path('item/',ItemViewSet)
     path('item/<str:category>/',ItemViewSet.get),
     re_path('admin/', admin.site.urls),
-    re_path('', index),    
-    re_path(react_views_regex,index),
+     re_path(react_views_regex,index),
     re_path(r'^static/(?P<path>.*)$', serve,
         {'document_root': settings.STATIC_ROOT}),
+    re_path('', index),    
+   
 re_path(r'^media/(?P<path>.*)$', serve, {
     "document_root": settings.MEDIA_ROOT
 })
