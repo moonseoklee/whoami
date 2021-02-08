@@ -158,3 +158,10 @@ import dj_database_url
 db_from_env = dj_database_url.config(conn_max_age=500) 
 DATABASES['default'].update(db_from_env)
 
+AWS_ACCESS_KEY_ID = process.env.AWS_ACCESS_KEY_ID
+AWS_SECRET_ACCESS_KEY = process.env.AWS_SECRET_ACCESS_KEY
+
+
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto3.S3Boto3Storage'
+AWS_STORAGE_BUCKET_NAME = 'whoami-moonseok'
+AWS_S3_REGION_NAME = 'ap-northeast-2'
