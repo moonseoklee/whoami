@@ -10,7 +10,7 @@
     z-index: 1; /* Overlay effect: positioned over other containers */
     width: 100%; /* Full width */
     bottom:0;
-    position: absolute; /* Fix position on the top-left corner*/
+    position: fixed; /* Fix position on the top-left corner*/
     top: 0;
     left: 0;
     overflow: auto; /* Enable scroll if needed */

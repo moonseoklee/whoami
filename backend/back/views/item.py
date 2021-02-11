@@ -13,7 +13,7 @@ class ItemViewSet(APIView):
 
         category = kwargs.get('category')
 
-        qs = qs.filter(category=category)
+        qs = qs.filter(category=category).order_by('id')
         sc = sc(qs,many=True)
         sc = (json.dumps(sc.data))
         

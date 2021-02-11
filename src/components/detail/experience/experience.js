@@ -38,11 +38,11 @@ const Experience = () => {
         <img src={project.image} className="gallery-image" alt="" style={{borderRadius:"10px"}} />
 
         <div className="gallery-item-info2">
-          <ul style={{padding:"1px"}}>
-            
-            <ReactMarkdown>{project.markdown_content}</ReactMarkdown>
-            
+          <div style={{margin:"20px"}}>
+          <ul style={{padding:"1px"}}>            
+            <ReactMarkdown>{project.markdown_content}</ReactMarkdown>            
           </ul>
+        </div>
         </div>
       </div>
     )

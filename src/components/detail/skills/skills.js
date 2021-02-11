@@ -45,6 +45,7 @@ const LineDiv = styled.div`
 const Skills = () => {
     return (
         <div className="page">
+          I can
            <SkillBucket>
                   <LineDiv>
                  <Image src={python}></Image>
